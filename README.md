@@ -44,13 +44,6 @@
 
 ## 목차
 
-
-
-
-
-
-
-
 - [**개요**](https://github.com/acca3434/JuShoppingmall#%EA%B0%9C%EC%9A%94)
 - [**사용기술**](https://github.com/acca3434/JuShoppingmall#%EC%82%AC%EC%9A%A9-%EA%B8%B0%EC%88%A0)
   - [전체 데이터베이스](https://github.com/acca3434/JuShoppingmall#%EC%A0%84%EC%B2%B4-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4
@@ -107,6 +100,63 @@ npm start
 
 ### 메인 페이지
 
+```JSX
+ return (
+        {userProduction
+          ? userProduction.map((value) => {
+              return (
+                <MDBRow className="justify-content-center mb-0" key={value.id}>
+                  <MDBCol md="12" xl="10">
+                    <MDBCard className="shadow-0 border rounded-3 mt-5 mb-3">
+                      <MDBCardBody>
+                        <MDBRow>
+                        
+                        
+                           (...)
+                           
+                           
+                          >
+                            <div className="d-flex flex-row align-items-center mb-1">
+                              <h4 className="mb-1 me-1">
+                                {value.product_price}원
+                              </h4>
+                              <span className="text-danger">
+                              </span>
+                            </div>
+                            <h6 className="text-success">Free shipping</h6>
+                            <div className="d-flex flex-column mt-4">
+                              <MDBBtn color="primary" size="sm">
+                                자세히 보기
+                              </MDBBtn>
+                              <MDBBtn
+                                outline
+                                color="primary"
+                                size="sm"
+                                className="mt-2"
+                                onClick={() =>
+                                  onShoppingCart({
+                                    value: value,
+                                    userSignInInfor: userSignInInfor,
+                                  })
+                                }
+                              >
+                                장바구니 담기
+                              </MDBBtn>
+                            </div>
+                          </MDBCol>
+                        </MDBRow>
+                      </MDBCardBody>
+                    </MDBCard>
+                  </MDBCol>
+                </MDBRow>
+              );
+            })
+          : ""}
+      </MDBContainer>
+    </>
+  );
+```
+
 <br/>
 
 <img src="./img/mainPage.png" />
@@ -122,6 +172,55 @@ npm start
 <br/>
 
 ### 로그인 페이지
+
+```JSX
+const SignIn = ({
+  signInIdinput,
+  signInPwinput,
+  signInchangeIdInput,
+  signInchangePwInput,
+  signInInsert,
+}) => {
+  const onChangeId = useCallback(
+    (e) => {
+      signInchangeIdInput(e.target.value);
+    },
+    [signInchangeIdInput]
+  );
+  const onChangePw = useCallback(
+    (e) => {
+      signInchangePwInput(e.target.value);
+    },
+    [signInchangePwInput]
+  );
+  const onSubmit = useCallback(
+    (e) => {
+      signInInsert(signInIdinput, signInPwinput);
+      signInchangeIdInput(""); // value값 초기화
+      signInchangePwInput(""); // value값 초기화
+      e.preventDefault();
+    },
+    [
+      signInInsert,
+      signInchangeIdInput,
+      signInchangePwInput,
+      signInIdinput,
+      signInPwinput,
+    ]
+  );
+  return (
+    <form className="TodoInsert" onSubmit={onSubmit}>
+      <label>아이디</label>
+      <input type="text" value={signInIdinput} onChange={onChangeId} />
+      <label>비번</label>
+      <input type="password" value={signInPwinput} onChange={onChangePw} />
+      <button type="submit">
+        <MdAdd />
+      </button>
+    </form>
+  );
+};
+```
 
 <br/>
 
@@ -139,6 +238,39 @@ npm start
 
 ### 자유게시판 페이지
 
+```JSX
+           {userPosts
+              ? userPosts
+                  .slice(offset, offset + limit)
+                  .map(
+                    ({
+                      id,
+                      post_id,
+                      post_title,
+                      post_content,
+                      createdAt,
+                      updatedAt,
+                    }) => {
+                      return (
+                        <tr key={id}>
+                          <th scope="row">{id}</th>
+                          <td>{post_id}</td>
+                          <td>
+                            <Link
+                              to={`/detail/${id}/${post_id}/${post_title}/${post_content}`}
+                            >
+                              {post_title}
+                            </Link>
+                          </td>
+                          <td>{createdAt}</td>
+                          <td>{updatedAt}</td>
+                        </tr>
+                      );
+                    }
+                  )
+              : "게시판 잘못 연결됐습니다 고객센터에 문의하세요"}
+```
+
 <br/>
 
 <img src="./img/board.png" />
@@ -146,6 +278,32 @@ npm start
 <br/>
 
 ### 자유게시판 검색 기능(JQeury)
+
+- - JQuery를 이용하여 실시간으로 검색가능하게 구현
+
+```JQuery
+  $(document).ready(function () {
+    $("#search").keyup(function () {
+      search_table($(this).val());
+    });
+    function search_table(value) {
+      $("#employee_table tr").each(function () {
+        let found = "false";
+        $(this).each(function () {
+          if ($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+            found = "true";
+          }
+        });
+        if (found === "true") {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    }
+  });
+```
+
 
 <br/>
 
@@ -155,6 +313,52 @@ npm start
 
 ### 자유게시판 댓글 기능
 
+```JSX
+            {userReply
+                ? userReply.map((value) => {
+                    return (
+                      <>
+                        <MDBCardBody className="p-4">
+                          <div className="d-flex flex-start">
+                            <MDBCardImage
+                              className="rounded-circle shadow-1-strong me-3"
+                              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp"
+                              alt="avatar"
+                              width="60"
+                              height="60"
+                            />
+                            <div>
+                              <MDBTypography tag="h6" className="fw-bold mb-1">
+                                닉네임 : {value.reply_user_id}
+                              </MDBTypography>
+                              <div className="d-flex align-items-center mb-3">
+                                <p className="mb-0">{value.createdAt}</p>
+                                <a href="#!" className="link-muted">
+                                  <MDBIcon fas icon="pencil-alt ms-2" />
+                                </a>
+                                <a href="#!" className="link-muted">
+                                  <MDBIcon fas icon="redo-alt ms-2" />
+                                </a>
+                                <a href="#!" className="link-muted">
+                                  <MDBIcon fas icon="heart ms-2" />
+                                </a>
+                              </div>
+                              <MDBTextArea
+                                label={`${value.reply_content}`}
+                                cols={150}
+                                style={{ backgroundColor: "#fff" }}
+                                className="p-5"
+                              />
+                            </div>
+                          </div>
+                        </MDBCardBody>
+                        <hr className="my-0" />
+                      </>
+                    );
+                  })
+                : "댓글이 아직 없어요 ㅠ"}
+```
+
 <br/>
 
 <img src="./img/reply.png" />
@@ -163,6 +367,68 @@ npm start
 
 ### 장바구니 기능
 
+```JSX
+                 {userCartsList
+                    ? userCartsList.map((value) => {
+                        return (
+                          <MDBCard className="rounded-3 mb-4" key={value.id}>
+                            <MDBCardBody className="p-4">
+                              <MDBRow className="justify-content-between align-items-center">
+                                <MDBCol md="2" lg="2" xl="2">
+                                  <p
+                                    className="lead fw-normal mb-2"
+                                    style={{ color: "black" }}
+                                  >
+                                    {value.cart_name}
+                                  </p>
+                                  <p>
+                                    <span className="text-muted">사이즈: </span>
+                                    M<span className="text-muted">Color: </span>
+                                    Grey
+                                  </p>
+                                </MDBCol>
+                                <MDBCol
+                                  md="3"
+                                  lg="3"
+                                  xl="2"
+                                  className="d-flex align-items-center justify-content-around"
+                                >
+                                  <MDBBtn color="link" className="px-2">
+                                    <MDBIcon fas icon="minus" />
+                                  </MDBBtn>
+                                  <MDBInput
+                                    min={0}
+                                    defaultValue={value.cart_quantity}
+                                    type="number"
+                                    size="sm"
+                                  />
+                                  <MDBBtn color="link" className="px-2">
+                                    <MDBIcon fas icon="plus" />
+                                  </MDBBtn>
+                                </MDBCol>
+                                <MDBCol
+                                  md="3"
+                                  lg="2"
+                                  xl="2"
+                                  className="offset-lg-1"
+                                >
+                          </MDBCard>
+                        );
+                      })
+                    : ""}
+                </MDBCol>
+              </MDBRow>
+            </MDBContainer>
+          </section>
+        </MDBModalBody>
+        <MDBModalFooter className="justify-content-end">
+          <MDBBtn color="primary" onClick={() => cartModalToggle()}>
+            닫기
+          </MDBBtn>
+          <MDBBtn color="primary" onClick={() => cartModalToggle()}>
+            주문하기
+          </MDBBtn>
+```
 <br/>
 
 <img src="./img/cart.png" />
