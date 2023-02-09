@@ -1,1 +1,0 @@
-const a = require("./img/mainPage.png")

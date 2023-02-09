@@ -161,5 +161,3 @@ npm start
 <img src="./img/cart.png" />
 
 <br/>
-
-d
