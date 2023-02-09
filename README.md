@@ -146,4 +146,20 @@ npm start
 
 <br/>
 
+- 자유게시판 댓글 기능
+
+<br/>
+
+<img src="./img/reply.png" />
+
+<br/>
+
+- 장바구니 기능
+
+<br/>
+
+<img src="./img/cart.png" />
+
+<br/>
+
 
