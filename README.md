@@ -44,20 +44,27 @@
 
 ## 목차
 
-- [**개요**](#개요)
-  - [Scripts](#Scripts)
-- [**주요 페이지**](#주요-페이지)
-  - [MainPage](#Main-Page)
-  - [ShopPage](#Shop-Page)
-  - [SwapPage](#Swap-Page)
-  - [MyPage](#My-Page)
-- [**주요 기능**](#주요-기능)
-  - [지갑 연결](#지갑연결)
-  - [민팅](#민팅)
-  - [거래](#거래)
-- [**기타**](#기타)
-  - [PPT](#PPT)
 
+
+
+
+
+
+
+- [**개요**](https://github.com/acca3434/JuShoppingmall#%EA%B0%9C%EC%9A%94)
+- [**사용기술**](https://github.com/acca3434/JuShoppingmall#%EC%82%AC%EC%9A%A9-%EA%B8%B0%EC%88%A0)
+  - [전체 데이터베이스](https://github.com/acca3434/JuShoppingmall#%EC%A0%84%EC%B2%B4-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4
+)
+  - [메인 페이지](https://github.com/acca3434/JuShoppingmall#%EB%A9%94%EC%9D%B8-%ED%8E%98%EC%9D%B4%EC%A7%80)
+  - [회원가입 페이지](https://github.com/acca3434/JuShoppingmall#%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%ED%8E%98%EC%9D%B4%EC%A7%80)
+  - [로그인 페이지](https://github.com/acca3434/JuShoppingmall#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%8E%98%EC%9D%B4%EC%A7%80)
+  - [로그인 후 페이지](https://github.com/acca3434/JuShoppingmall#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%9B%84-%ED%8E%98%EC%9D%B4%EC%A7%80)
+  - [자유게시판 페이지](https://github.com/acca3434/JuShoppingmall#%EC%9E%90%EC%9C%A0%EA%B2%8C%EC%8B%9C%ED%8C%90-%ED%8E%98%EC%9D%B4%EC%A7%80)
+  - [자유게시판 검색 기능(JQeury)](https://github.com/acca3434/JuShoppingmall#%EC%9E%90%EC%9C%A0%EA%B2%8C%EC%8B%9C%ED%8C%90-%EA%B2%80%EC%83%89-%EA%B8%B0%EB%8A%A5jqeury)
+  - [자유게시판 댓글 기능](https://github.com/acca3434/JuShoppingmall#%EC%9E%90%EC%9C%A0%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%8C%93%EA%B8%80-%EA%B8%B0%EB%8A%A5
+)
+  - [장바구니 기능](https://github.com/acca3434/JuShoppingmall#%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88-%EA%B8%B0%EB%8A%A5)
+  
 ---
 
 ## **개요**
@@ -90,7 +97,7 @@ npm start
 
 ---
 
-- 전체 데이터베이스
+### 전체 데이터베이스
 
 <br/>
 
@@ -98,7 +105,7 @@ npm start
 
 <br/>
 
-- 메인 페이지
+### 메인 페이지
 
 <br/>
 
@@ -106,7 +113,7 @@ npm start
 
 <br/>
 
-- 회원가입 페이지
+### 회원가입 페이지
 
 <br/>
 
@@ -114,7 +121,7 @@ npm start
 
 <br/>
 
-- 로그인 페이지
+### 로그인 페이지
 
 <br/>
 
@@ -122,7 +129,7 @@ npm start
 
 <br/>
 
-- 로그인 후 페이지
+### 로그인 후 페이지
 
 <br/>
 
@@ -130,7 +137,7 @@ npm start
 
 <br/>
 
-- 자유게시판 페이지
+### 자유게시판 페이지
 
 <br/>
 
@@ -138,7 +145,7 @@ npm start
 
 <br/>
 
-- 자유게시판 검색 기능(JQeury)
+### 자유게시판 검색 기능(JQeury)
 
 <br/>
 
@@ -146,7 +153,7 @@ npm start
 
 <br/>
 
-- 자유게시판 댓글 기능
+### 자유게시판 댓글 기능
 
 <br/>
 
@@ -154,7 +161,7 @@ npm start
 
 <br/>
 
-- 장바구니 기능
+### 장바구니 기능
 
 <br/>
 
