@@ -25,6 +25,8 @@
   - 회원가입 : 유입된 회원들을 저장할 수 있는 저장소 구현
 
   - 자유게시판 : 유저들이 자유롭게 글을 쓸 수 있는 게시판 구현
+
+    - JQuery를 이용한 실시간 검색구현
   
   - 댓글 : 유저들이 자유게시판에 있는 특정 글에 댓글을 달 수 있는 공간 구현
   
@@ -77,7 +79,7 @@ npm start
 
 #### backend
 
-`cd backend`
+`cd back`
 
 npm start
 
@@ -235,6 +237,59 @@ const SignIn = ({
 
 ### 로그인 후 페이지
 
+- JWT로 로그인 유지 기능구현
+
+```JavaScript
+app.post("/signIn", async (req, res) => {
+  let { signInIdinput, signInPwinput } = req.body;
+
+  const users = await User.findOne({
+    where: { user_id: signInIdinput },
+  }).then((data) => {
+    bcrypt.compare(signInPwinput, data?.user_pw, (err, same) => {
+      if (same) {
+        const aT = jwt.sign(
+          {
+            password: data.user_pw,
+          },
+          process.env.JU_ACCESS_TOKEN,
+          {
+            expiresIn: "1d",
+          }
+        );
+        const rT = jwt.sign(
+          {
+            password: data.user_pw,
+          },
+          process.env.JU_REFRESH_TOKEN,
+          {
+            expiresIn: "1d",
+          }
+        );
+        console.log(aT);
+        data.update(
+          {
+            access_token: aT, //
+            refresh_token: rT,
+          },
+          {
+            where: {
+              user_id: signInIdinput,
+            },
+          }
+        );
+        Promise.all([data, aT, rT]).then((data) => {
+          res.send(data);
+          // res.send({ data:data[0], aT:data[1], rT:data[2] });
+        });
+      } else if (!same) {
+        const aleadyUser = null;
+        res.send(aleadyUser);
+      }
+    });
+  });
+});
+```
 <br/>
 
 <img src="./img/loginAfterPage.png" />
