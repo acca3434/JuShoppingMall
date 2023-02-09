@@ -57,7 +57,8 @@
   - [자유게시판 댓글 기능](https://github.com/acca3434/JuShoppingmall#%EC%9E%90%EC%9C%A0%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%8C%93%EA%B8%80-%EA%B8%B0%EB%8A%A5
 )
   - [장바구니 기능](https://github.com/acca3434/JuShoppingmall#%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88-%EA%B8%B0%EB%8A%A5)
-- [**힘든점 및 이슈**]()
+- [**힘든점 및 이슈**](https://github.com/acca3434/JuShoppingmall#%ED%9E%98%EB%93%A0%EC%A0%90-%EB%B0%8F-%EC%9D%B4%EC%8A%88%EC%83%81%ED%99%A9)
+  
 ---
 
 ## **개요**
