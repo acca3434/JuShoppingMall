@@ -106,23 +106,44 @@ npm start
 
 <br/>
 
-- 민팅 버튼
+- 회원가입 페이지
 
 <br/>
 
-<img src='https://user-images.githubusercontent.com/107897972/209747764-3479426b-edd9-4906-b011-55dc2ee98e35.png' />
+<img src="./img/signUpPage.png" />
 
 <br/>
 
-- 거래 페이지
-
-<br/>
-<img src='https://user-images.githubusercontent.com/107897972/209748087-7d435ecf-bdb7-4d75-9c46-fc046fe46466.png' />
+- 로그인 페이지
 
 <br/>
 
-- 판매 페이지
+<img src="./img/loginPage.png" />
 
 <br/>
 
-<img src='https://user-images.githubusercontent.com/107897972/209747974-b841791c-bde4-46a3-9554-373be6900064.png' />
+- 로그인 후 페이지
+
+<br/>
+
+<img src="./img/loginAfterPage.png" />
+
+<br/>
+
+- 자유게시판 페이지
+
+<br/>
+
+<img src="./img/board.png" />
+
+<br/>
+
+- 자유게시판 검색 기능(JQeury)
+
+<br/>
+
+<img src="./img/jquerySearch.png" />
+
+<br/>
+
+
