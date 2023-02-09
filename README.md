@@ -58,6 +58,10 @@
 )
   - [장바구니 기능](https://github.com/acca3434/JuShoppingmall#%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88-%EA%B8%B0%EB%8A%A5)
 - [**힘든점 및 이슈**](https://github.com/acca3434/JuShoppingmall#%ED%9E%98%EB%93%A0%EC%A0%90-%EB%B0%8F-%EC%9D%B4%EC%8A%88%EC%83%81%ED%99%A9)
+- [장바구니 이슈](https://github.com/acca3434/JuShoppingmall#%EC%9C%A0%EC%A0%80%EA%B0%80-%EB%8B%B4%EA%B8%B4-%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88%EA%B0%80-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%95%88%EB%8B%B4%EA%B8%B0%EB%8A%94-%EC%83%81%ED%99%A9-%EB%B0%9C%EC%83%9D)
+- [댓글기능 이슈](https://github.com/acca3434/JuShoppingmall#%EC%9C%A0%EC%A0%80%EA%B0%80-%EC%8D%A8%EB%86%93%EC%9D%80-%EB%8C%93%EA%B8%80%EA%B8%B0%EB%8A%A5%EC%9D%B4-%EC%96%B4%EB%8A%90%EC%88%9C%EA%B0%84-%EC%83%81%ED%98%B8%EC%9E%91%EC%9A%A9%EC%9D%B4-%EB%90%98%EC%A7%88-%EC%95%8A%EC%9D%8C)
+- [비밀키 및 외부키 관계설정 이슈](https://github.com/acca3434/JuShoppingmall#%EB%B9%84%EB%B0%80%ED%82%A4-%EC%99%B8%EB%B6%80%ED%82%A4-%EC%97%B0%EA%B2%B0%EA%B4%80%EA%B3%84%EC%84%A4%EC%A0%95%EC%9D%B4-%EC%A2%80-%EA%B9%8C%EB%8B%A4%EB%A1%9C%EC%9A%B4%EA%B2%83-%EA%B0%99%EC%9D%8C)
+- [로그인 및 회원가입 Front 이슈](https://github.com/acca3434/JuShoppingmall#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%8F-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-front-view-%EC%9E%90%EC%B2%B4-%EC%BD%94%EB%93%9C%EA%B0%80-%EB%B6%80%EC%8B%A4%ED%95%A8)
   
 ---
 
