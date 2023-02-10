@@ -528,4 +528,4 @@ app.post("/signIn", async (req, res) => {
 
 - Front View 기능에 신경 못 쓴 점이 큼.
 
-- Frontend 부분 R&D 후 
+- Frontend 부분 R&D 진행 후 보완하겠음.
